@@ -2,6 +2,7 @@
 # GitHub: https://github.com/themanvika/pythonWeatherReport.git
 
 import requests
+import json
 from datetime import datetime
 
 city = input("Enter a city (default: Cheonan): ").strip()
@@ -68,3 +69,24 @@ else:
         print(f"🌡 Max temperature: {daily['temperature_2m_max'][i]}°C")
         print(f"❄ Min temperature: {daily['temperature_2m_min'][i]}°C")
         print(f"🌧 Rain probability: {daily['precipitation_probability_max'][i]}%")
+
+    # 3. Save as JSON
+    save_choice = input("\nSave weather information as JSON? (y/n): ").strip().lower()
+
+    if save_choice == "y":
+        file_name = f"{city_name}_weather.json"
+
+        save_data = {
+            "city": city_name,
+            "country": country,
+            "latitude": latitude,
+            "longitude": longitude,
+            "forecast": daily
+        }
+
+        with open(file_name, "w", encoding="utf-8") as file:
+            json.dump(save_data, file, ensure_ascii=False, indent=4)
+
+        print(f"Weather information saved to {file_name}")
+    else:
+        print("Weather information was not saved.")

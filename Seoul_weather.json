@@ -1,0 +1,28 @@
+{
+    "city": "Seoul",
+    "country": "South Korea",
+    "latitude": 37.566,
+    "longitude": 126.9784,
+    "forecast": {
+        "time": [
+            "2026-09-26",
+            "2026-09-27",
+            "2026-09-28"
+        ],
+        "temperature_2m_max": [
+            26.0,
+            26.2,
+            25.2
+        ],
+        "temperature_2m_min": [
+            17.2,
+            16.5,
+            18.2
+        ],
+        "precipitation_probability_max": [
+            94,
+            8,
+            39
+        ]
+    }
+}
